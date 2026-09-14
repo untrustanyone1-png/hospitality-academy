@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: hospitality-academy
+    runtime: python
+    buildCommand: pip install -r requirements-prod.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: SESSION_HTTPS_ONLY
+        value: "true"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: hospitality-academy-db
+          property: connectionString
+      - key: PAYMENT_PROVIDER
+        value: demo
+      - key: INSTAPAY_ADDRESS
+        sync: false
+      - key: INSTAPAY_ACCOUNT_NAME
+        value: Hospitality Academy
+      - key: INSTAPAY_LINK
+        sync: false
+
+databases:
+  - name: hospitality-academy-db
+    plan: free

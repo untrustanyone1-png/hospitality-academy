@@ -1,1 +1,65 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hospitality Academy Demo</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="app"><aside class="side"><div class="brand">Hospitality <span>Academy</span></div><nav class="menu"><a class="active" href="demo.html"><span class="ico">⌂</span>Dashboard</a><a href="#intelligence"><span class="ico">◉</span>AI Workforce Command Center</a><a href="#performance"><span class="ico">↗</span>Performance Loop</a><a href="#operations"><span class="ico">▥</span>Operations &amp; ROI</a><a href="#copilot"><span class="ico">✦</span>AI Training Copilot</a><a href="#employees"><span class="ico">♙</span>Employees</a><a href="#skills"><span class="ico">▦</span>Skills Matrix</a><a href="#competency"><span class="ico">✓</span>Competency Verification</a><a href="#departments"><span class="ico">⌂</span>Departments</a><a href="#academy"><span class="ico">🎓</span>Training Academy</a><a href="#certificates"><span class="ico">◆</span>Certificates</a><a href="#subscription"><span class="ico">▣</span>Subscription</a></nav><div class="side-bottom">Training Manager<br><b style="color:#dbe7ff">demo@hotel.com</b><br><br>FICTIONAL DEMO ENVIRONMENT</div></aside><main class="main"><div class="demo-banner">FICTIONAL HOTEL DATA — This screen is for sales demonstration only.</div><div class="bar"><div><h1>Hotel Workforce Dashboard</h1><div class="sub">Training, competency and workforce signals in one view.</div></div><a class="btn btn-primary" href="sales.html">Sales Overview</a></div><div class="grid4"><div class="stat"><div class="label">Employees</div><div class="num">128</div><div class="delta">Active workforce</div></div><div class="stat"><div class="label">Readiness</div><div class="num">78%</div><div class="delta">Workforce readiness</div></div><div class="stat"><div class="label">Skill Gaps</div><div class="num">23</div><div class="delta">Priority gaps</div></div><div class="stat"><div class="label">Overdue</div><div class="num">11</div><div class="delta">Training items</div></div></div><div class="two"><section class="panel"><h3>Department Readiness</h3><div class="bars"><div class="barrow"><span>Front Office</span><div class="track"><div class="fill" style="width:86%"></div></div><b>86%</b></div><div class="barrow"><span>F&amp;B</span><div class="track"><div class="fill" style="width:79%"></div></div><b>79%</b></div><div class="barrow"><span>Housekeeping</span><div class="track"><div class="fill" style="width:74%"></div></div><b>74%</b></div><div class="barrow"><span>Kitchen</span><div class="track"><div class="fill" style="width:82%"></div></div><b>82%</b></div><div class="barrow"><span>Sales</span><div class="track"><div class="fill" style="width:71%"></div></div><b>71%</b></div></div></section><section class="panel"><h3>Priority Skill Gaps</h3><div class="gap"><span>Complaint handling</span><span class="badge">12 employees</span></div><div class="gap"><span>Upselling</span><span class="badge">8 employees</span></div><div class="gap"><span>Food safety</span><span class="badge">6 employees</span></div><div class="gap"><span>Room standards</span><span class="badge">5 employees</span></div></section></div><section class="panel" id="performance"><h3>Performance Loop</h3><div class="loop"><div class="step"><b>Diagnose</b><span>Assess roles &amp; skills</span></div><div class="step"><b>Train</b><span>Assign targeted programs</span></div><div class="step"><b>Verify</b><span>Measure competency</span></div><div class="step"><b>Improve</b><span>Track workforce signals</span></div></div></section><div class="two"><section class="panel" id="academy"><h3>Recommended Training</h3><div class="gap"><span>Guest Complaint Recovery</span><span class="pill">12 assigned</span></div><div class="gap"><span>Upselling &amp; Revenue Skills</span><span class="pill">8 assigned</span></div><div class="gap"><span>Food Safety Essentials</span><span class="pill">6 assigned</span></div></section><section class="panel" id="certificates"><h3>Certification Status</h3><div class="gap"><span>Completed</span><b>64</b></div><div class="gap"><span>In Progress</span><b>39</b></div><div class="gap"><span>Not Started</span><b>25</b></div></section></div><section class="panel" id="departments"><h3>Hotel Departments</h3><div class="features"><div class="feature"><h3>Front Office</h3><p>Guest services, reception and concierge.</p></div><div class="feature"><h3>Food &amp; Beverage</h3><p>Restaurants, bars and room service.</p></div><div class="feature"><h3>Housekeeping</h3><p>Rooms, public areas and laundry.</p></div><div class="feature"><h3>Kitchen</h3><p>Food preparation and culinary support.</p></div></div></section></main></div></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hospitality Academy Demo</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><div class="app">
+<aside class="side"><div class="brand">Hospitality <span>Academy</span></div>
+<nav class="menu" id="sideMenu">
+<a class="active" href="#dashboard">⌂ Dashboard</a>
+<a href="#intelligence">◉ AI Workforce Command Center</a>
+<a href="#performance">↗ Performance Loop</a>
+<a href="#operations">▥ Operations &amp; ROI</a>
+<a href="#copilot">✦ AI Training Copilot</a>
+<a href="#employees">♙ Employees</a>
+<a href="#skills">▦ Skills Matrix</a>
+<a href="#competency">✓ Competency Verification</a>
+<a href="#departments">⌂ Departments</a>
+<a href="#academy">🎓 Training Academy</a>
+<a href="#certificates">◆ Certificates</a>
+<a href="#subscription">▣ Subscription</a>
+</nav><div class="side-bottom">Training Manager<br><b>demo@hotel.com</b><br><br>FICTIONAL DEMO ENVIRONMENT</div></aside>
+
+<main class="main"><div class="demo-banner">FICTIONAL HOTEL DATA — This screen is for sales demonstration only.</div>
+
+<section id="dashboard" class="section"><div class="bar"><div><div class="eyebrow">HOTEL WORKFORCE INTELLIGENCE</div><h1>Hotel Workforce Dashboard</h1><div class="sub">Training, competency and workforce signals in one view.</div></div><a class="btn" href="sales.html">Sales Overview</a></div>
+<div class="grid4">
+<div class="stat"><small>Employees</small><strong>128</strong><em>Active workforce</em></div>
+<div class="stat"><small>Readiness</small><strong>78%</strong><em>Workforce readiness</em></div>
+<div class="stat"><small>Skill Gaps</small><strong>23</strong><em>Priority gaps</em></div>
+<div class="stat"><small>Overdue</small><strong>11</strong><em>Training items</em></div></div>
+<div class="two"><div class="panel"><h3>Department Readiness</h3>
+<p>Front Office <b>86%</b></p><div class="track"><i style="width:86%"></i></div>
+<p>F&amp;B <b>79%</b></p><div class="track"><i style="width:79%"></i></div>
+<p>Housekeeping <b>74%</b></p><div class="track"><i style="width:74%"></i></div>
+<p>Kitchen <b>82%</b></p><div class="track"><i style="width:82%"></i></div>
+<p>Sales <b>71%</b></p><div class="track"><i style="width:71%"></i></div></div>
+<div class="panel"><h3>Priority Skill Gaps</h3><div class="row">Complaint handling <span>12 employees</span></div><div class="row">Upselling <span>8 employees</span></div><div class="row">Food safety <span>6 employees</span></div><div class="row">Room standards <span>5 employees</span></div></div></div></section>
+
+<section id="intelligence" class="panel section"><div class="eyebrow">AI WORKFORCE</div><h2>AI Workforce Command Center</h2><p>Identify workforce gaps, prioritize employees and turn training signals into manager actions.</p><div class="cards"><article><b>Gap Detection</b><p>23 priority skill gaps detected.</p></article><article><b>Priority Signals</b><p>Complaint handling and upselling need attention.</p></article><article><b>Recommended Actions</b><p>Assign targeted training and verify competency.</p></article></div></section>
+
+<section id="performance" class="panel section"><div class="eyebrow">PERFORMANCE LOOP</div><h2>Diagnose → Train → Verify → Improve</h2><div class="loop"><b>Diagnose<br><small>Assess roles &amp; skills</small></b><b>Train<br><small>Assign programs</small></b><b>Verify<br><small>Measure competency</small></b><b>Improve<br><small>Track signals</small></b></div></section>
+
+<section id="operations" class="panel section"><div class="eyebrow">OPERATIONS &amp; ROI</div><h2>Connect Training to Hotel Performance</h2><div class="cards"><article><b>Readiness</b><p>78% workforce readiness.</p></article><article><b>Risk Signals</b><p>11 overdue training items.</p></article><article><b>Outcome Tracking</b><p>Monitor competency and improvement.</p></article></div></section>
+
+<section id="copilot" class="panel section"><div class="eyebrow">AI TRAINING COPILOT</div><h2>Build Targeted Training Faster</h2><p>Turn a skill gap into a practical training recommendation for the relevant department and role.</p><div class="row">Guest Complaint Recovery <span>12 assigned</span></div><div class="row">Upselling &amp; Revenue Skills <span>8 assigned</span></div><div class="row">Food Safety Essentials <span>6 assigned</span></div></section>
+
+<section id="employees" class="panel section"><div class="eyebrow">PEOPLE</div><h2>Employees</h2><div class="table"><b>Employee</b><b>Department</b><b>Readiness</b><b>Status</b><span>Ahmed Hassan</span><span>Front Office</span><span>91%</span><span>Ready</span><span>Sarah Ali</span><span>F&amp;B</span><span>76%</span><span>Training</span><span>Omar Khaled</span><span>Housekeeping</span><span>68%</span><span>Gap</span></div></section>
+
+<section id="skills" class="panel section"><div class="eyebrow">SKILLS</div><h2>Skills Matrix</h2><div class="table"><b>Skill</b><b>Front Office</b><b>F&amp;B</b><b>Sales</b><span>Guest communication</span><span>High</span><span>High</span><span>High</span><span>Complaint handling</span><span>Medium</span><span>Low</span><span>Medium</span><span>Upselling</span><span>Medium</span><span>Medium</span><span>High</span></div></section>
+
+<section id="competency" class="panel section"><div class="eyebrow">VERIFICATION</div><h2>Competency Verification</h2><div class="cards"><article><b>Verified</b><p>Employees who passed assessment.</p></article><article><b>In Progress</b><p>Employees completing training.</p></article><article><b>Needs Action</b><p>Employees with unresolved gaps.</p></article></div></section>
+
+<section id="departments" class="panel section"><div class="eyebrow">HOTEL STRUCTURE</div><h2>Hotel Departments</h2><div class="cards"><article><b>Front Office</b><p>Guest services and reception.</p></article><article><b>Food &amp; Beverage</b><p>Restaurants and room service.</p></article><article><b>Housekeeping</b><p>Rooms and public areas.</p></article><article><b>Kitchen</b><p>Food preparation and culinary support.</p></article><article><b>Management</b><p>Administration and strategy.</p></article><article><b>Sales</b><p>Groups, events and revenue.</p></article></div></section>
+
+<section id="academy" class="panel section"><div class="eyebrow">TRAINING</div><h2>Training Academy</h2><div class="cards"><article><b>Guest Complaint Recovery</b><p>Practical scenarios and assessment.</p></article><article><b>Upselling &amp; Revenue Skills</b><p>Commercial skills for guest-facing teams.</p></article><article><b>Food Safety Essentials</b><p>Core knowledge and verification.</p></article></div></section>
+
+<section id="certificates" class="panel section"><div class="eyebrow">CERTIFICATION</div><h2>Certificates</h2><div class="grid4"><div class="stat"><small>Completed</small><strong>64</strong></div><div class="stat"><small>In Progress</small><strong>39</strong></div><div class="stat"><small>Not Started</small><strong>25</strong></div><div class="stat"><small>Verification</small><strong>100%</strong></div></div></section>
+
+<section id="subscription" class="panel section"><div class="eyebrow">PRICING</div><h2>Hospitality Academy Plans</h2><p>7-day trial starts after payment confirmation.</p><div class="cards"><article><b>Starter</b><h3>999 EGP / month</h3><p>Up to 50 employees</p><a class="btn" href="sales.html">Request Demo</a></article><article><b>Professional</b><h3>3,499 EGP / month</h3><p>Up to 150 employees</p><a class="btn" href="sales.html">Request Demo</a></article><article><b>Enterprise</b><h3>5,999 EGP / month</h3><p>Up to 500 employees</p><a class="btn" href="sales.html">Request Demo</a></article></div></section>
+</main></div>
+
+<script>
+const links=[...document.querySelectorAll('#sideMenu a')];
+const sections=links.map(x=>document.querySelector(x.getAttribute('href'))).filter(Boolean);
+function active(){let y=scrollY+140,cur=sections[0];sections.forEach(s=>{if(s.offsetTop<=y)cur=s});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur.id))}
+links.forEach(a=>a.onclick=e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});history.replaceState(null,'',a.getAttribute('href'));links.forEach(x=>x.classList.remove('active'));a.classList.add('active')}});addEventListener('scroll',active,{passive:true});active();
+</script></body></html>

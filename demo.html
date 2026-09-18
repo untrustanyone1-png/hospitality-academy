@@ -4,7 +4,7 @@
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f6f8fc;color:#152238}a{text-decoration:none;color:inherit}.app{display:flex;min-height:100vh}.side{width:260px;background:#0b1730;color:#dbe7ff;padding:22px 14px;position:fixed;inset:0 auto 0 0;overflow:auto;z-index:5}.brand{font-size:20px;font-weight:900;padding:0 12px 22px}.brand span{color:#60a5fa}.menu a{display:flex;gap:9px;align-items:center;padding:10px 12px;border-radius:10px;color:#b9c7df;font-size:13px;margin:2px 0}.menu a.active,.menu a:hover{background:#16284d;color:#fff}.group{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#7184a5;padding:15px 12px 5px}.side-bottom{margin-top:18px;border-top:1px solid #203454;padding:16px 12px;color:#9fb0cc;font-size:11px}.main{margin-left:260px;width:calc(100% - 260px);padding:28px 34px}.banner{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:11px 15px;border-radius:12px;margin-bottom:18px;font-size:12px;font-weight:700}.section{scroll-margin-top:20px;margin-bottom:18px}.panel{background:#fff;border:1px solid #e5eaf2;border-radius:18px;padding:21px}.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;gap:15px}.eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:800;color:#2563eb}.bar h1,h2{margin:5px 0 7px}.bar h1{font-size:28px}.sub,p{color:#64748b;font-size:13px}.btn{display:inline-flex;padding:10px 15px;border-radius:10px;background:#2563eb;color:#fff;font-weight:700;font-size:12px;border:0}.btn.alt{background:#eaf1ff;color:#1d4ed8}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.stat{background:#fff;border:1px solid #e5eaf2;border-radius:16px;padding:16px}.stat small{color:#64748b}.stat strong{display:block;font-size:26px;margin:5px 0}.stat em{font-style:normal;color:#15803d;font-size:11px}.two{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-top:16px}.track{height:8px;background:#edf1f7;border-radius:20px;overflow:hidden;margin:5px 0 12px}.track i{display:block;height:100%;background:#2563eb}.row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #e5eaf2;font-size:12px;gap:10px}.row:last-child{border-bottom:0}.pill{padding:4px 8px;border-radius:8px;background:#ecfdf3;color:#15803d;font-weight:700;font-size:10px;white-space:nowrap}.pill.warn{background:#fff7ed;color:#c2410c}.pill.blue{background:#eff6ff;color:#1d4ed8}.table{display:grid;grid-template-columns:1.25fr 1fr 1fr .8fr .8fr;border:1px solid #e5eaf2;border-radius:13px;overflow:hidden}.table>*{padding:11px 12px;border-bottom:1px solid #e5eaf2;font-size:11px}.table>*:nth-last-child(-n+5){border-bottom:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid #e5eaf2;border-radius:14px;padding:16px;background:#fff}.card b{font-size:13px}.card p{line-height:1.45;margin-bottom:0}.tag{display:inline-block;font-size:9px;font-weight:800;background:#eef2ff;color:#3730a3;border-radius:6px;padding:4px 7px;margin-bottom:9px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.filters select,.filters input{border:1px solid #dbe2ec;border-radius:9px;padding:9px 10px;background:#fff;font-size:11px;color:#334155}.reportbox{background:#f8fafc;border:1px solid #e5eaf2;border-radius:14px;padding:15px}.report-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.loop{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.loop b{text-align:center;border:1px solid #e5eaf2;border-radius:12px;padding:15px 7px;font-size:11px}.loop small{color:#64748b;font-weight:400;font-size:9px}.note{background:#f8fafc;border-left:3px solid #2563eb;padding:11px 13px;border-radius:8px;font-size:11px;color:#475569;margin-top:12px}
 @media(max-width:1100px){.grid4{grid-template-columns:1fr 1fr}.cards,.grid3,.two{grid-template-columns:1fr}.loop{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.app{display:block}.side{position:relative;width:100%;height:auto}.main{margin-left:0;width:100%;padding:18px}.menu{display:grid;grid-template-columns:1fr 1fr}.grid4,.cards,.loop{grid-template-columns:1fr}.table{grid-template-columns:1fr 1fr}.table>*{border-bottom:1px solid #e5eaf2!important}}
-</style></head>
+.tabs{display:flex;gap:7px;flex-wrap:wrap}.tab{border:1px solid #dbe2ec;background:#fff;border-radius:9px;padding:9px 13px;font-size:11px;font-weight:800;color:#475569;cursor:pointer}.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}.data{width:100%;border-collapse:collapse;border:1px solid #e5eaf2;border-radius:12px;overflow:hidden;font-size:11px}.data th,.data td{padding:11px 10px;border-bottom:1px solid #e5eaf2;text-align:left}.data th{background:#f8fafc;color:#475569}.data tr:last-child td{border-bottom:0}.mini{border:1px solid #dbe2ec;background:#fff;border-radius:6px;padding:4px 7px;font-size:10px;cursor:pointer}.mini.danger{color:#b91c1c}.coretab{overflow:auto}@media(max-width:760px){.data{min-width:760px}}</style></head>
 <body><div class="app">
 <aside class="side"><div class="brand">Hospitality <span>Academy</span></div><nav class="menu" id="sideMenu">
 <div class="group">Management</div>
@@ -58,13 +58,139 @@
 
 <section id="reports" class="panel section"><div class="eyebrow">16–17 · REPORTING &amp; DASHBOARDS</div><h2>Reports Center</h2><p>Detailed management reports with filters and export-ready outputs.</p><div class="filters"><select><option>All Departments</option></select><select><option>All Training Types</option></select><select><option>All Programs</option></select><select><option>All Statuses</option></select><input type="date"><input type="date"></div><div class="grid3"><div class="reportbox"><b>TNA Report</b><p>Needs by department, position, competency, source, priority and status.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Training Plan Report</b><p>Annual/monthly plan, planned vs completed, hours, participants and budget.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Employee Training History</b><p>Complete employee-level history, attendance, evaluations and certificates.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Attendance Report</b><p>Attendance by employee, session, department and date with absence/late analysis.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Effectiveness Report</b><p>Evaluation, pre/post assessment, manager follow-up and competency movement.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Skills &amp; Gap Report</b><p>Required vs current competency, gap severity, affected employees and closure.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Budget &amp; Cost Report</b><p>Planned vs actual, department/program/provider spend and remaining budget.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Trainer / Provider Report</b><p>Sessions, participants, cost, utilization and evaluation history.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Certificate Expiry Report</b><p>Active, expiring and expired certificates with employee and renewal action.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div></div><div class="note"><b>Report Builder:</b> the production version will let managers choose columns, save custom reports, reuse filters and export the same report every month.</div></section>
 
-</main></div>
+<div id="coreLive" class="panel section" style="margin-bottom:18px">
+<div class="bar"><div><div class="eyebrow">CORE TRAINING SYSTEM · LIVE DEMO</div><h2>Operational Data Workspace</h2><div class="sub">These modules now use real browser-side records, forms, editing, deletion and Excel-compatible CSV export. Data persists in this browser.</div></div><button class="btn alt" onclick="resetDemo()">Reset Demo Data</button></div>
+<div class="grid4">
+<div class="stat"><small>Employees</small><strong id="kEmployees">0</strong><em>Employee records</em></div>
+<div class="stat"><small>Open TNA</small><strong id="kTna">0</strong><em>Needs requiring action</em></div>
+<div class="stat"><small>Programs</small><strong id="kPrograms">0</strong><em>Active catalog</em></div>
+<div class="stat"><small>Training Records</small><strong id="kTraining">0</strong><em>History records</em></div>
+</div>
+<div class="grid4" style="margin-top:11px">
+<div class="stat"><small>Attendance</small><strong id="kAttendance">0%</strong><em>Current records</em></div>
+<div class="stat"><small>Certificates</small><strong id="kCertificates">0</strong><em>Tracked records</em></div>
+<div class="stat"><small>Skill Gaps</small><strong>0</strong><em>Calculated live below</em></div>
+<div class="stat"><small>Storage</small><strong>Local</strong><em>Browser demo data</em></div>
+</div>
+<div class="tabs" style="margin:18px 0 12px">
+<button class="tab active" data-tab="liveEmployees" onclick="showTab('liveEmployees')">Employees</button>
+<button class="tab" data-tab="liveTna" onclick="showTab('liveTna')">TNA</button>
+<button class="tab" data-tab="livePrograms" onclick="showTab('livePrograms')">Programs</button>
+<button class="tab" data-tab="liveHistory" onclick="showTab('liveHistory')">Training History</button>
+<button class="tab" data-tab="liveSkills" onclick="showTab('liveSkills')">Skills & Gaps</button>
+<button class="tab" data-tab="liveCerts" onclick="showTab('liveCerts')">Certificates</button>
+</div>
+<div id="liveEmployees" class="coretab">
+<div class="bar"><h3>Employees</h3><div><button class="btn" onclick="addItem('employee')">+ Add Employee</button> <button class="btn alt" onclick="exportCSV('employees')">Export Excel</button></div></div>
+<table class="data"><thead><tr><th>ID</th><th>Name</th><th>Department</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead><tbody id="employeeTable"></tbody></table></div>
+<div id="liveTna" class="coretab" style="display:none"><div class="bar"><h3>TNA Needs</h3><div><button class="btn" onclick="addItem('tna')">+ Add Need</button> <button class="btn alt" onclick="exportCSV('needs')">Export Excel</button></div></div><table class="data"><thead><tr><th>ID</th><th>Need</th><th>Department</th><th>Source</th><th>Priority</th><th>Status</th><th>Actions</th></tr></thead><tbody id="tnaTable"></tbody></table></div>
+<div id="livePrograms" class="coretab" style="display:none"><div class="bar"><h3>Training Programs</h3><div><button class="btn" onclick="addItem('program')">+ Add Program</button> <button class="btn alt" onclick="exportCSV('programs')">Export Excel</button></div></div><table class="data"><thead><tr><th>ID</th><th>Program</th><th>Type</th><th>Department</th><th>Hours</th><th>Status</th><th>Actions</th></tr></thead><tbody id="programTable"></tbody></table></div>
+<div id="liveHistory" class="coretab" style="display:none"><div class="bar"><h3>Employee Training History</h3><div><button class="btn" onclick="addItem('training')">+ Add Training Record</button> <button class="btn alt" onclick="exportCSV('records')">Export Excel</button></div></div><table class="data"><thead><tr><th>Employee</th><th>Program</th><th>Type</th><th>Date</th><th>Attendance</th><th>Evaluation</th><th>Status</th><th>Actions</th></tr></thead><tbody id="historyTable"></tbody></table></div>
+<div id="liveSkills" class="coretab" style="display:none"><div class="bar"><h3>Skills & Competencies / Gap</h3></div><table class="data"><thead><tr><th>Skill</th><th>Department</th><th>Required</th><th>Current</th><th>Gap</th><th>Actions</th></tr></thead><tbody id="skillsTable"></tbody></table><div class="cards" id="gapCards" style="margin-top:14px"></div></div>
+<div id="liveCerts" class="coretab" style="display:none"><div class="bar"><h3>Certificates & Expiry</h3></div><table class="data"><thead><tr><th>Employee</th><th>Program</th><th>Issue</th><th>Expiry</th><th>Status</th><th>Actions</th></tr></thead><tbody id="certTable"></tbody></table></div>
+<div class="note"><b>V1 scope:</b> core data model + operational screens + CRUD-style demo actions + local persistence + live calculations. Production authentication, database, multi-hotel tenancy and server-side PDF/XLSX generation belong to the commercial stage.</div>
+</div></main></div>
 <script>
+const seed={
+employees:[
+{id:"EMP-001",name:"Ahmed Hassan",dept:"Front Office",role:"Receptionist",status:"Active"},
+{id:"EMP-002",name:"Sarah Ali",dept:"F&B",role:"Waiter",status:"Active"},
+{id:"EMP-003",name:"Omar Khaled",dept:"Housekeeping",role:"Room Attendant",status:"Active"},
+{id:"EMP-004",name:"Mona Samir",dept:"Front Office",role:"Guest Relations",status:"Active"}
+],
+needs:[
+{id:"TNA-001",need:"Complaint Handling",dept:"Front Office",source:"Skill Gap",priority:"Critical",status:"Open"},
+{id:"TNA-002",need:"Food Safety Refresh",dept:"F&B",source:"Compliance",priority:"High",status:"Approved"},
+{id:"TNA-003",need:"Leadership Basics",dept:"Management",source:"Performance",priority:"Medium",status:"Planned"}
+],
+programs:[
+{id:"PRG-001",name:"Food Safety Essentials",type:"Mandatory",dept:"F&B",hours:4,status:"Active"},
+{id:"PRG-002",name:"Guest Complaint Recovery",type:"Development",dept:"Front Office",hours:6,status:"Active"},
+{id:"PRG-003",name:"Room Standards Mastery",type:"OJT",dept:"Housekeeping",hours:8,status:"Active"}
+],
+records:[
+{id:"TR-001",emp:"EMP-001",program:"Guest Complaint Recovery",type:"Off-Job",date:"2026-09-08",attendance:"Present",evaluation:4.6,status:"Completed"},
+{id:"TR-002",emp:"EMP-002",program:"Food Safety Essentials",type:"Off-Job",date:"2026-09-10",attendance:"Present",evaluation:4.4,status:"Completed"},
+{id:"TR-003",emp:"EMP-003",program:"Room Standards Mastery",type:"OJT",date:"2026-09-12",attendance:"Present",evaluation:4.7,status:"In Progress"}
+],
+skills:[
+{skill:"Guest Communication",required:4,current:3.6,dept:"Front Office"},
+{skill:"Complaint Handling",required:4,current:2.7,dept:"Front Office"},
+{skill:"Food Safety",required:4,current:3.1,dept:"F&B"},
+{skill:"Upselling",required:3,current:2.2,dept:"Front Office"}
+],
+certificates:[
+{id:"CERT-001",emp:"EMP-001",program:"Guest Complaint Recovery",issue:"2026-03-10",expiry:"2027-03-10",status:"Active"},
+{id:"CERT-002",emp:"EMP-002",program:"Food Safety Essentials",issue:"2026-02-01",expiry:"2027-02-01",status:"Active"},
+{id:"CERT-003",emp:"EMP-003",program:"Room Standards Mastery",issue:"2025-10-01",expiry:"2026-10-01",status:"Expiring"}
+]
+};
+let db=JSON.parse(localStorage.getItem("ha_core_v1")||"null")||seed;
+function save(){localStorage.setItem("ha_core_v1",JSON.stringify(db));renderAll()}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
+function empName(id){return db.employees.find(x=>x.id===id)?.name||id}
+function tableRows(arr,cols,actions=true){
+return arr.map(x=>"<tr>"+cols.map(c=>"<td>"+esc(typeof c==="function"?c(x):x[c])+"</td>").join("")+(actions?'<td><button class="mini" onclick="editItem(\''+esc(x.id||x.name||"")+'\')">Edit</button> <button class="mini danger" onclick="deleteItem(\''+esc(x.id||x.name||"")+'\')">Delete</button></td>':"")+"</tr>").join("")
+}
+function renderAll(){
+document.getElementById("kEmployees").textContent=db.employees.length;
+document.getElementById("kTna").textContent=db.needs.filter(x=>x.status==="Open").length;
+document.getElementById("kPrograms").textContent=db.programs.length;
+document.getElementById("kTraining").textContent=db.records.length;
+document.getElementById("kAttendance").textContent=Math.round(db.records.filter(x=>x.attendance==="Present").length/Math.max(1,db.records.length)*100)+"%";
+document.getElementById("kCertificates").textContent=db.certificates.length;
+document.getElementById("employeeTable").innerHTML=tableRows(db.employees,["id","name","dept","role","status"]);
+document.getElementById("tnaTable").innerHTML=tableRows(db.needs,["id","need","dept","source","priority","status"]);
+document.getElementById("programTable").innerHTML=tableRows(db.programs,["id","name","type","dept","hours","status"]);
+document.getElementById("historyTable").innerHTML=tableRows(db.records,[x=>empName(x.emp),"program","type","date","attendance","evaluation","status"]);
+document.getElementById("skillsTable").innerHTML=tableRows(db.skills,["skill","dept","required","current",x=>(x.required-x.current).toFixed(1)]);
+document.getElementById("certTable").innerHTML=tableRows(db.certificates,[x=>empName(x.emp),"program","issue","expiry","status"]);
+const gap=db.skills.filter(x=>x.required>x.current).sort((a,b)=>(b.required-b.current)-(a.required-a.current));
+document.getElementById("gapCards").innerHTML=gap.map(x=>'<div class="card"><span class="tag">GAP '+(x.required-x.current).toFixed(1)+'</span><b>'+esc(x.skill)+'</b><p>'+esc(x.dept)+' · Required '+x.required+' · Current '+x.current+'</p></div>').join("");
+}
+function addItem(type){
+const forms={
+employee:["New Employee","name,dept,role"],
+tna:["New TNA Need","need,dept,source,priority"],
+program:["New Training Program","name,type,dept,hours"],
+training:["New Training Record","emp,program,type,date,attendance,evaluation"]
+};
+const f=forms[type]; if(!f)return;
+const vals=f[1].split(",").map(k=>[k,prompt(k.replace(/^./,m=>m.toUpperCase())+":")]);
+if(vals.some(x=>x[1]===null))return;
+const o={id:(type==="employee"?"EMP-":type==="tna"?"TNA-":type==="program"?"PRG-":"TR-")+Date.now().toString().slice(-6)};
+vals.forEach(([k,v])=>o[k]=v);
+if(type==="employee")o.status="Active";
+if(type==="tna")o.status="Open";
+if(type==="program"){o.hours=Number(o.hours)||0;o.status="Active"}
+if(type==="training"){o.evaluation=Number(o.evaluation)||0;o.status="Completed"}
+db[type==="employee"?"employees":type==="tna"?"needs":type==="program"?"programs":"records"].push(o);save();
+}
+function deleteItem(id){
+if(!confirm("Delete this record?"))return;
+for(const k of ["employees","needs","programs","records","certificates"]){const i=db[k].findIndex(x=>(x.id||x.name)===id);if(i>=0){db[k].splice(i,1);save();return}}
+}
+function editItem(id){
+for(const k of ["employees","needs","programs","records","certificates"]){
+const x=db[k].find(v=>(v.id||v.name)===id); if(!x)continue;
+const key=Object.keys(x).find(v=>!["id"].includes(v));
+const v=prompt("Edit "+key+":",x[key]); if(v!==null){x[key]=v;save()} return;
+}}
+function exportCSV(kind){
+const maps={employees:["id","name","dept","role","status"],needs:["id","need","dept","source","priority","status"],programs:["id","name","type","dept","hours","status"],records:["employee","program","type","date","attendance","evaluation","status"]};
+let rows=db[kind]||db.records;let headers=maps[kind]||maps.records;
+if(kind==="records")rows=rows.map(x=>({employee:empName(x.emp),program:x.program,type:x.type,date:x.date,attendance:x.attendance,evaluation:x.evaluation,status:x.status}));
+const csv=[headers.join(","),...rows.map(x=>headers.map(h=>'"'+String(x[h]??"").replace(/"/g,'""')+'"').join(","))].join("\n");
+const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\\ufeff"+csv],{type:"text/csv;charset=utf-8"}));a.download="hospitality-academy-"+kind+".csv";a.click();
+}
+function resetDemo(){if(confirm("Reset all demo data?")){localStorage.removeItem("ha_core_v1");location.reload()}}
+function showTab(id){document.querySelectorAll(".coretab").forEach(x=>x.style.display="none");document.getElementById(id).style.display="block";document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.tab===id))}
 const links=[...document.querySelectorAll('#sideMenu a')];
 const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 function setActive(id){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id))}
 function goTo(id){const t=document.getElementById(id);if(!t)return;t.scrollIntoView({behavior:'smooth',block:'start'});setActive(id);history.replaceState(null,'','#'+id)}
 links.forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h&&h.startsWith('#')){e.preventDefault();goTo(h.slice(1))}}));
 function active(){const y=scrollY+180;let cur=sections[0];sections.forEach(s=>{if(s.offsetTop<=y)cur=s});if(cur)setActive(cur.id)}
-addEventListener('scroll',active,{passive:true});const initial=location.hash.slice(1);if(initial&&document.getElementById(initial))setTimeout(()=>goTo(initial),50);active();
+addEventListener('scroll',active,{passive:true});
+renderAll();active();
 </script></body></html>

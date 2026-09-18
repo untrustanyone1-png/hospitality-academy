@@ -59,138 +59,92 @@
 <section id="reports" class="panel section"><div class="eyebrow">16–17 · REPORTING &amp; DASHBOARDS</div><h2>Reports Center</h2><p>Detailed management reports with filters and export-ready outputs.</p><div class="filters"><select><option>All Departments</option></select><select><option>All Training Types</option></select><select><option>All Programs</option></select><select><option>All Statuses</option></select><input type="date"><input type="date"></div><div class="grid3"><div class="reportbox"><b>TNA Report</b><p>Needs by department, position, competency, source, priority and status.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Training Plan Report</b><p>Annual/monthly plan, planned vs completed, hours, participants and budget.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Employee Training History</b><p>Complete employee-level history, attendance, evaluations and certificates.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Attendance Report</b><p>Attendance by employee, session, department and date with absence/late analysis.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Effectiveness Report</b><p>Evaluation, pre/post assessment, manager follow-up and competency movement.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Skills &amp; Gap Report</b><p>Required vs current competency, gap severity, affected employees and closure.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Budget &amp; Cost Report</b><p>Planned vs actual, department/program/provider spend and remaining budget.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Trainer / Provider Report</b><p>Sessions, participants, cost, utilization and evaluation history.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div><div class="reportbox"><b>Certificate Expiry Report</b><p>Active, expiring and expired certificates with employee and renewal action.</p><div class="report-actions"><button class="btn">Export Excel</button><button class="btn alt">Export PDF</button></div></div></div><div class="note"><b>Report Builder:</b> the production version will let managers choose columns, save custom reports, reuse filters and export the same report every month.</div></section>
 
 <div id="coreLive" class="panel section" style="margin-bottom:18px">
-<div class="bar"><div><div class="eyebrow">CORE TRAINING SYSTEM · LIVE DEMO</div><h2>Operational Data Workspace</h2><div class="sub">These modules now use real browser-side records, forms, editing, deletion and Excel-compatible CSV export. Data persists in this browser.</div></div><button class="btn alt" onclick="resetDemo()">Reset Demo Data</button></div>
+<div class="bar"><div><div class="eyebrow">CORE WORKFLOWS · V1</div><h2>Hotel Training Operations</h2><div class="sub">Operational workflows connected in one browser-side data model.</div></div><button class="btn alt" onclick="resetDemo()">Reset Demo</button></div>
 <div class="grid4">
-<div class="stat"><small>Employees</small><strong id="kEmployees">0</strong><em>Employee records</em></div>
-<div class="stat"><small>Open TNA</small><strong id="kTna">0</strong><em>Needs requiring action</em></div>
-<div class="stat"><small>Programs</small><strong id="kPrograms">0</strong><em>Active catalog</em></div>
-<div class="stat"><small>Training Records</small><strong id="kTraining">0</strong><em>History records</em></div>
-</div>
-<div class="grid4" style="margin-top:11px">
-<div class="stat"><small>Attendance</small><strong id="kAttendance">0%</strong><em>Current records</em></div>
-<div class="stat"><small>Certificates</small><strong id="kCertificates">0</strong><em>Tracked records</em></div>
-<div class="stat"><small>Skill Gaps</small><strong>0</strong><em>Calculated live below</em></div>
-<div class="stat"><small>Storage</small><strong>Local</strong><em>Browser demo data</em></div>
+<div class="stat"><small>Employees</small><strong id="kEmployees">0</strong><em>Active records</em></div>
+<div class="stat"><small>Pending Approvals</small><strong id="kPending">0</strong><em>Nomination workflow</em></div>
+<div class="stat"><small>Attendance</small><strong id="kAttendance">0%</strong><em>Recorded sessions</em></div>
+<div class="stat"><small>Budget Used</small><strong id="kBudget">0%</strong><em>Plan vs actual</em></div>
 </div>
 <div class="tabs" style="margin:18px 0 12px">
-<button class="tab active" data-tab="liveEmployees" onclick="showTab('liveEmployees')">Employees</button>
-<button class="tab" data-tab="liveTna" onclick="showTab('liveTna')">TNA</button>
-<button class="tab" data-tab="livePrograms" onclick="showTab('livePrograms')">Programs</button>
-<button class="tab" data-tab="liveHistory" onclick="showTab('liveHistory')">Training History</button>
-<button class="tab" data-tab="liveSkills" onclick="showTab('liveSkills')">Skills & Gaps</button>
-<button class="tab" data-tab="liveCerts" onclick="showTab('liveCerts')">Certificates</button>
+<button class="tab active" data-tab="nominations" onclick="showTab('nominations')">Nomination & Approval</button><button class="tab " data-tab="attendanceLive" onclick="showTab('attendanceLive')">Attendance</button><button class="tab " data-tab="evaluationLive" onclick="showTab('evaluationLive')">Evaluation</button><button class="tab " data-tab="certLive" onclick="showTab('certLive')">Certificates</button><button class="tab " data-tab="resourcesLive" onclick="showTab('resourcesLive')">Trainers & Providers</button><button class="tab " data-tab="costLive" onclick="showTab('costLive')">Costs & Budget</button>
 </div>
-<div id="liveEmployees" class="coretab">
-<div class="bar"><h3>Employees</h3><div><button class="btn" onclick="addItem('employee')">+ Add Employee</button> <button class="btn alt" onclick="exportCSV('employees')">Export Excel</button></div></div>
-<table class="data"><thead><tr><th>ID</th><th>Name</th><th>Department</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead><tbody id="employeeTable"></tbody></table></div>
-<div id="liveTna" class="coretab" style="display:none"><div class="bar"><h3>TNA Needs</h3><div><button class="btn" onclick="addItem('tna')">+ Add Need</button> <button class="btn alt" onclick="exportCSV('needs')">Export Excel</button></div></div><table class="data"><thead><tr><th>ID</th><th>Need</th><th>Department</th><th>Source</th><th>Priority</th><th>Status</th><th>Actions</th></tr></thead><tbody id="tnaTable"></tbody></table></div>
-<div id="livePrograms" class="coretab" style="display:none"><div class="bar"><h3>Training Programs</h3><div><button class="btn" onclick="addItem('program')">+ Add Program</button> <button class="btn alt" onclick="exportCSV('programs')">Export Excel</button></div></div><table class="data"><thead><tr><th>ID</th><th>Program</th><th>Type</th><th>Department</th><th>Hours</th><th>Status</th><th>Actions</th></tr></thead><tbody id="programTable"></tbody></table></div>
-<div id="liveHistory" class="coretab" style="display:none"><div class="bar"><h3>Employee Training History</h3><div><button class="btn" onclick="addItem('training')">+ Add Training Record</button> <button class="btn alt" onclick="exportCSV('records')">Export Excel</button></div></div><table class="data"><thead><tr><th>Employee</th><th>Program</th><th>Type</th><th>Date</th><th>Attendance</th><th>Evaluation</th><th>Status</th><th>Actions</th></tr></thead><tbody id="historyTable"></tbody></table></div>
-<div id="liveSkills" class="coretab" style="display:none"><div class="bar"><h3>Skills & Competencies / Gap</h3></div><table class="data"><thead><tr><th>Skill</th><th>Department</th><th>Required</th><th>Current</th><th>Gap</th><th>Actions</th></tr></thead><tbody id="skillsTable"></tbody></table><div class="cards" id="gapCards" style="margin-top:14px"></div></div>
-<div id="liveCerts" class="coretab" style="display:none"><div class="bar"><h3>Certificates & Expiry</h3></div><table class="data"><thead><tr><th>Employee</th><th>Program</th><th>Issue</th><th>Expiry</th><th>Status</th><th>Actions</th></tr></thead><tbody id="certTable"></tbody></table></div>
-<div class="note"><b>V1 scope:</b> core data model + operational screens + CRUD-style demo actions + local persistence + live calculations. Production authentication, database, multi-hotel tenancy and server-side PDF/XLSX generation belong to the commercial stage.</div>
+<div id="nominations" class="coretab">
+<div class="bar"><h3>Nomination & Approval</h3><div><button class="btn" onclick="addNomination()">+ New Nomination</button><button class="btn alt" onclick="exportCSV('nominations')">Export Excel</button></div></div>
+<table class="data"><thead><tr><th>ID</th><th>Employee</th><th>Program</th><th>Manager</th><th>Budget</th><th>Status</th><th>Actions</th></tr></thead><tbody id="nomTable"></tbody></table>
+</div>
+<div id="attendanceLive" class="coretab" style="display:none">
+<div class="bar"><h3>Attendance</h3><div><button class="btn" onclick="addAttendance()">+ Record Attendance</button><button class="btn alt" onclick="exportCSV('attendance')">Export Excel</button></div></div>
+<table class="data"><thead><tr><th>Employee</th><th>Program</th><th>Date</th><th>Status</th><th>Hours</th><th>Actions</th></tr></thead><tbody id="attTable"></tbody></table>
+</div>
+<div id="evaluationLive" class="coretab" style="display:none">
+<div class="bar"><h3>Evaluation & Effectiveness</h3><div><button class="btn" onclick="addEvaluation()">+ Add Evaluation</button><button class="btn alt" onclick="exportCSV('evaluations')">Export Excel</button></div></div>
+<table class="data"><thead><tr><th>Employee</th><th>Program</th><th>Reaction</th><th>Pre</th><th>Post</th><th>Manager</th><th>Actions</th></tr></thead><tbody id="evalTable"></tbody></table>
+</div>
+<div id="certLive" class="coretab" style="display:none">
+<div class="bar"><h3>Certificates & Expiry</h3><div><button class="btn" onclick="issueCertificate()">+ Issue Certificate</button><button class="btn alt" onclick="exportCSV('certificates')">Export Excel</button></div></div>
+<table class="data"><thead><tr><th>Employee</th><th>Program</th><th>Issue</th><th>Expiry</th><th>Status</th><th>Actions</th></tr></thead><tbody id="certTable2"></tbody></table>
+</div>
+<div id="resourcesLive" class="coretab" style="display:none">
+<div class="bar"><h3>Trainers & Providers</h3><div><button class="btn" onclick="addTrainer()">+ Add Trainer</button><button class="btn alt" onclick="exportCSV('trainers')">Export Excel</button></div></div>
+<table class="data"><thead><tr><th>ID</th><th>Name</th><th>Type</th><th>Provider</th><th>Specialty</th><th>Actions</th></tr></thead><tbody id="trainerTable"></tbody></table>
+</div>
+<div id="costLive" class="coretab" style="display:none">
+<div class="bar"><h3>Costs & Budget</h3><div><button class="btn" onclick="addCost()">+ Add Cost</button><button class="btn alt" onclick="exportCSV('costs')">Export Excel</button></div></div>
+<div class="grid3"><div class="stat"><small>Annual Budget</small><strong id="budgetPlan">0</strong><em>EGP</em></div><div class="stat"><small>Actual</small><strong id="budgetActual">0</strong><em>EGP</em></div><div class="stat"><small>Remaining</small><strong id="budgetRemaining">0</strong><em>EGP</em></div></div>
+<table class="data" style="margin-top:14px"><thead><tr><th>ID</th><th>Item</th><th>Department</th><th>Planned</th><th>Actual</th><th>Actions</th></tr></thead><tbody id="costTable"></tbody></table>
+</div>
+<div class="note"><b>Workflow chain:</b> Nominate → Manager Approval → Budget Approval → Schedule → Attend → Evaluate → Issue Certificate → Track Expiry. Trainers/providers and costs are linked operational records.</div>
 </div></main></div>
 <script>
-const seed={
-employees:[
-{id:"EMP-001",name:"Ahmed Hassan",dept:"Front Office",role:"Receptionist",status:"Active"},
-{id:"EMP-002",name:"Sarah Ali",dept:"F&B",role:"Waiter",status:"Active"},
-{id:"EMP-003",name:"Omar Khaled",dept:"Housekeeping",role:"Room Attendant",status:"Active"},
-{id:"EMP-004",name:"Mona Samir",dept:"Front Office",role:"Guest Relations",status:"Active"}
-],
-needs:[
-{id:"TNA-001",need:"Complaint Handling",dept:"Front Office",source:"Skill Gap",priority:"Critical",status:"Open"},
-{id:"TNA-002",need:"Food Safety Refresh",dept:"F&B",source:"Compliance",priority:"High",status:"Approved"},
-{id:"TNA-003",need:"Leadership Basics",dept:"Management",source:"Performance",priority:"Medium",status:"Planned"}
-],
-programs:[
-{id:"PRG-001",name:"Food Safety Essentials",type:"Mandatory",dept:"F&B",hours:4,status:"Active"},
-{id:"PRG-002",name:"Guest Complaint Recovery",type:"Development",dept:"Front Office",hours:6,status:"Active"},
-{id:"PRG-003",name:"Room Standards Mastery",type:"OJT",dept:"Housekeeping",hours:8,status:"Active"}
-],
-records:[
-{id:"TR-001",emp:"EMP-001",program:"Guest Complaint Recovery",type:"Off-Job",date:"2026-09-08",attendance:"Present",evaluation:4.6,status:"Completed"},
-{id:"TR-002",emp:"EMP-002",program:"Food Safety Essentials",type:"Off-Job",date:"2026-09-10",attendance:"Present",evaluation:4.4,status:"Completed"},
-{id:"TR-003",emp:"EMP-003",program:"Room Standards Mastery",type:"OJT",date:"2026-09-12",attendance:"Present",evaluation:4.7,status:"In Progress"}
-],
-skills:[
-{skill:"Guest Communication",required:4,current:3.6,dept:"Front Office"},
-{skill:"Complaint Handling",required:4,current:2.7,dept:"Front Office"},
-{skill:"Food Safety",required:4,current:3.1,dept:"F&B"},
-{skill:"Upselling",required:3,current:2.2,dept:"Front Office"}
-],
-certificates:[
-{id:"CERT-001",emp:"EMP-001",program:"Guest Complaint Recovery",issue:"2026-03-10",expiry:"2027-03-10",status:"Active"},
-{id:"CERT-002",emp:"EMP-002",program:"Food Safety Essentials",issue:"2026-02-01",expiry:"2027-02-01",status:"Active"},
-{id:"CERT-003",emp:"EMP-003",program:"Room Standards Mastery",issue:"2025-10-01",expiry:"2026-10-01",status:"Expiring"}
-]
-};
-let db=JSON.parse(localStorage.getItem("ha_core_v1")||"null")||seed;
-function save(){localStorage.setItem("ha_core_v1",JSON.stringify(db));renderAll()}
+const seed={employees:[
+{id:"EMP-001",name:"Ahmed Hassan",dept:"Front Office",role:"Receptionist",status:"Active"},{id:"EMP-002",name:"Sarah Ali",dept:"F&B",role:"Waiter",status:"Active"},{id:"EMP-003",name:"Omar Khaled",dept:"Housekeeping",role:"Room Attendant",status:"Active"},{id:"EMP-004",name:"Mona Samir",dept:"Front Office",role:"Guest Relations",status:"Active"}],
+needs:[{id:"TNA-001",need:"Complaint Handling",dept:"Front Office",source:"Skill Gap",priority:"Critical",status:"Open"},{id:"TNA-002",need:"Food Safety Refresh",dept:"F&B",source:"Compliance",priority:"High",status:"Approved"}],
+programs:[{id:"PRG-001",name:"Food Safety Essentials",type:"Mandatory",dept:"F&B",hours:4,status:"Active"},{id:"PRG-002",name:"Guest Complaint Recovery",type:"Development",dept:"Front Office",hours:6,status:"Active"},{id:"PRG-003",name:"Room Standards Mastery",type:"OJT",dept:"Housekeeping",hours:8,status:"Active"}],
+nominations:[{id:"NOM-001",emp:"EMP-001",program:"Guest Complaint Recovery",manager:"Pending",budget:2500,status:"Pending Manager Approval"},{id:"NOM-002",emp:"EMP-002",program:"Food Safety Essentials",manager:"Approved",budget:1800,status:"Budget Approval"}],
+attendance:[{id:"ATT-001",emp:"EMP-001",program:"Guest Complaint Recovery",date:"2026-09-08",status:"Present",hours:6},{id:"ATT-002",emp:"EMP-002",program:"Food Safety Essentials",date:"2026-09-10",status:"Present",hours:4},{id:"ATT-003",emp:"EMP-003",program:"Room Standards Mastery",date:"2026-09-12",status:"Late",hours:7}],
+evaluations:[{id:"EVAL-001",emp:"EMP-001",program:"Guest Complaint Recovery",reaction:4.6,pre:62,post:88,manager:4.2},{id:"EVAL-002",emp:"EMP-002",program:"Food Safety Essentials",reaction:4.4,pre:70,post:94,manager:4.5}],
+certificates:[{id:"CERT-001",emp:"EMP-001",program:"Guest Complaint Recovery",issue:"2026-03-10",expiry:"2027-03-10",status:"Active"},{id:"CERT-002",emp:"EMP-002",program:"Food Safety Essentials",issue:"2026-02-01",expiry:"2027-02-01",status:"Active"},{id:"CERT-003",emp:"EMP-003",program:"Room Standards Mastery",issue:"2025-10-01",expiry:"2026-10-01",status:"Expiring"}],
+trainers:[{id:"TRN-001",name:"Mona Ibrahim",type:"Internal",provider:"Hotel",specialty:"Guest Service"},{id:"TRN-002",name:"SafeServe Academy",type:"External",provider:"SafeServe",specialty:"Food Safety"}],
+costs:[{id:"CST-001",item:"Guest Complaint Recovery",dept:"Front Office",planned:2500,actual:2200},{id:"CST-002",item:"Food Safety Essentials",dept:"F&B",planned:1800,actual:1800},{id:"CST-003",item:"Leadership Workshop",dept:"Management",planned:4200,actual:3100}],
+skills:[{skill:"Guest Communication",required:4,current:3.6,dept:"Front Office"},{skill:"Complaint Handling",required:4,current:2.7,dept:"Front Office"},{skill:"Food Safety",required:4,current:3.1,dept:"F&B"},{skill:"Upselling",required:3,current:2.2,dept:"Front Office"}]};
+let db=JSON.parse(localStorage.getItem("ha_core_v1_workflows")||"null")||seed;
+function save(){localStorage.setItem("ha_core_v1_workflows",JSON.stringify(db));renderAll()}
 function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
 function empName(id){return db.employees.find(x=>x.id===id)?.name||id}
-function tableRows(arr,cols,actions=true){
-return arr.map(x=>"<tr>"+cols.map(c=>"<td>"+esc(typeof c==="function"?c(x):x[c])+"</td>").join("")+(actions?'<td><button class="mini" onclick="editItem(\''+esc(x.id||x.name||"")+'\')">Edit</button> <button class="mini danger" onclick="deleteItem(\''+esc(x.id||x.name||"")+'\')">Delete</button></td>':"")+"</tr>").join("")
-}
+function rows(arr,cols,kind){return arr.map(x=>"<tr>"+cols.map(c=>"<td>"+esc(typeof c==="function"?c(x):x[c])+"</td>").join("")+"<td><button class='mini' onclick=\"editRecord('"+esc(x.id)+"','"+kind+"')\">Edit</button> <button class='mini danger' onclick=\"deleteRecord('"+esc(x.id)+"','"+kind+"')\">Delete</button></td></tr>").join("")}
 function renderAll(){
 document.getElementById("kEmployees").textContent=db.employees.length;
-document.getElementById("kTna").textContent=db.needs.filter(x=>x.status==="Open").length;
-document.getElementById("kPrograms").textContent=db.programs.length;
-document.getElementById("kTraining").textContent=db.records.length;
-document.getElementById("kAttendance").textContent=Math.round(db.records.filter(x=>x.attendance==="Present").length/Math.max(1,db.records.length)*100)+"%";
-document.getElementById("kCertificates").textContent=db.certificates.length;
-document.getElementById("employeeTable").innerHTML=tableRows(db.employees,["id","name","dept","role","status"]);
-document.getElementById("tnaTable").innerHTML=tableRows(db.needs,["id","need","dept","source","priority","status"]);
-document.getElementById("programTable").innerHTML=tableRows(db.programs,["id","name","type","dept","hours","status"]);
-document.getElementById("historyTable").innerHTML=tableRows(db.records,[x=>empName(x.emp),"program","type","date","attendance","evaluation","status"]);
-document.getElementById("skillsTable").innerHTML=tableRows(db.skills,["skill","dept","required","current",x=>(x.required-x.current).toFixed(1)]);
-document.getElementById("certTable").innerHTML=tableRows(db.certificates,[x=>empName(x.emp),"program","issue","expiry","status"]);
-const gap=db.skills.filter(x=>x.required>x.current).sort((a,b)=>(b.required-b.current)-(a.required-a.current));
-document.getElementById("gapCards").innerHTML=gap.map(x=>'<div class="card"><span class="tag">GAP '+(x.required-x.current).toFixed(1)+'</span><b>'+esc(x.skill)+'</b><p>'+esc(x.dept)+' · Required '+x.required+' · Current '+x.current+'</p></div>').join("");
+document.getElementById("kPending").textContent=db.nominations.filter(x=>x.status!=="Approved").length;
+document.getElementById("kAttendance").textContent=Math.round(db.attendance.filter(x=>x.status==="Present").length/Math.max(1,db.attendance.length)*100)+"%";
+const plan=db.costs.reduce((a,x)=>a+Number(x.planned||0),0),actual=db.costs.reduce((a,x)=>a+Number(x.actual||0),0);
+document.getElementById("kBudget").textContent=Math.round(actual/Math.max(1,plan)*100)+"%";
+document.getElementById("nomTable").innerHTML=rows(db.nominations,[x=>x.id,x=>empName(x.emp),"program","manager","budget","status"],"nominations");
+document.getElementById("attTable").innerHTML=rows(db.attendance,[x=>empName(x.emp),"program","date","status","hours"],"attendance");
+document.getElementById("evalTable").innerHTML=rows(db.evaluations,[x=>empName(x.emp),"program","reaction","pre","post","manager"],"evaluations");
+document.getElementById("certTable2").innerHTML=rows(db.certificates,[x=>empName(x.emp),"program","issue","expiry","status"],"certificates");
+document.getElementById("trainerTable").innerHTML=rows(db.trainers,["id","name","type","provider","specialty"],"trainers");
+document.getElementById("costTable").innerHTML=rows(db.costs,["id","item","dept","planned","actual"],"costs");
+document.getElementById("budgetPlan").textContent=plan.toLocaleString();
+document.getElementById("budgetActual").textContent=actual.toLocaleString();
+document.getElementById("budgetRemaining").textContent=(plan-actual).toLocaleString();
 }
-function addItem(type){
-const forms={
-employee:["New Employee","name,dept,role"],
-tna:["New TNA Need","need,dept,source,priority"],
-program:["New Training Program","name,type,dept,hours"],
-training:["New Training Record","emp,program,type,date,attendance,evaluation"]
-};
-const f=forms[type]; if(!f)return;
-const vals=f[1].split(",").map(k=>[k,prompt(k.replace(/^./,m=>m.toUpperCase())+":")]);
-if(vals.some(x=>x[1]===null))return;
-const o={id:(type==="employee"?"EMP-":type==="tna"?"TNA-":type==="program"?"PRG-":"TR-")+Date.now().toString().slice(-6)};
-vals.forEach(([k,v])=>o[k]=v);
-if(type==="employee")o.status="Active";
-if(type==="tna")o.status="Open";
-if(type==="program"){o.hours=Number(o.hours)||0;o.status="Active"}
-if(type==="training"){o.evaluation=Number(o.evaluation)||0;o.status="Completed"}
-db[type==="employee"?"employees":type==="tna"?"needs":type==="program"?"programs":"records"].push(o);save();
-}
-function deleteItem(id){
-if(!confirm("Delete this record?"))return;
-for(const k of ["employees","needs","programs","records","certificates"]){const i=db[k].findIndex(x=>(x.id||x.name)===id);if(i>=0){db[k].splice(i,1);save();return}}
-}
-function editItem(id){
-for(const k of ["employees","needs","programs","records","certificates"]){
-const x=db[k].find(v=>(v.id||v.name)===id); if(!x)continue;
-const key=Object.keys(x).find(v=>!["id"].includes(v));
-const v=prompt("Edit "+key+":",x[key]); if(v!==null){x[key]=v;save()} return;
-}}
-function exportCSV(kind){
-const maps={employees:["id","name","dept","role","status"],needs:["id","need","dept","source","priority","status"],programs:["id","name","type","dept","hours","status"],records:["employee","program","type","date","attendance","evaluation","status"]};
-let rows=db[kind]||db.records;let headers=maps[kind]||maps.records;
-if(kind==="records")rows=rows.map(x=>({employee:empName(x.emp),program:x.program,type:x.type,date:x.date,attendance:x.attendance,evaluation:x.evaluation,status:x.status}));
-const csv=[headers.join(","),...rows.map(x=>headers.map(h=>'"'+String(x[h]??"").replace(/"/g,'""')+'"').join(","))].join("\n");
-const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\\ufeff"+csv],{type:"text/csv;charset=utf-8"}));a.download="hospitality-academy-"+kind+".csv";a.click();
-}
-function resetDemo(){if(confirm("Reset all demo data?")){localStorage.removeItem("ha_core_v1");location.reload()}}
+function askFields(fields){const o={};for(const f of fields){const v=prompt(f[1]+":");if(v===null)return null;o[f[0]]=v}return o}
+function addNomination(){const o=askFields([["emp","Employee ID (e.g. EMP-001)"],["program","Program"],["manager","Manager status (Pending/Approved/Rejected)"],["budget","Budget EGP"]]);if(!o)return;o.id="NOM-"+Date.now().toString().slice(-6);o.budget=Number(o.budget)||0;o.status=o.manager==="Approved"?"Budget Approval":"Pending Manager Approval";db.nominations.push(o);save()}
+function addAttendance(){const o=askFields([["emp","Employee ID"],["program","Program"],["date","Date YYYY-MM-DD"],["status","Present/Absent/Late"],["hours","Hours"]]);if(!o)return;o.id="ATT-"+Date.now().toString().slice(-6);o.hours=Number(o.hours)||0;db.attendance.push(o);save()}
+function addEvaluation(){const o=askFields([["emp","Employee ID"],["program","Program"],["reaction","Reaction 1-5"],["pre","Pre score %"],["post","Post score %"],["manager","Manager follow-up 1-5"]]);if(!o)return;o.id="EVAL-"+Date.now().toString().slice(-6);db.evaluations.push(o);save()}
+function issueCertificate(){const o=askFields([["emp","Employee ID"],["program","Program"],["issue","Issue date YYYY-MM-DD"],["expiry","Expiry date YYYY-MM-DD"]]);if(!o)return;o.id="CERT-"+Date.now().toString().slice(-6);o.status="Active";db.certificates.push(o);save()}
+function addTrainer(){const o=askFields([["name","Trainer / Provider name"],["type","Internal / External"],["provider","Provider"],["specialty","Specialty"]]);if(!o)return;o.id="TRN-"+Date.now().toString().slice(-6);db.trainers.push(o);save()}
+function addCost(){const o=askFields([["item","Cost item"],["dept","Department"],["planned","Planned EGP"],["actual","Actual EGP"]]);if(!o)return;o.id="CST-"+Date.now().toString().slice(-6);o.planned=Number(o.planned)||0;o.actual=Number(o.actual)||0;db.costs.push(o);save()}
+function deleteRecord(id,kind){if(!confirm("Delete this record?"))return;const i=db[kind].findIndex(x=>x.id===id);if(i>=0){db[kind].splice(i,1);save()}}
+function editRecord(id,kind){const x=db[kind].find(v=>v.id===id);if(!x)return;const key=Object.keys(x).find(k=>k!=="id");const v=prompt("Edit "+key+":",x[key]);if(v!==null){x[key]=v;save()}}
+function exportCSV(kind){const arr=db[kind]||[];if(!arr.length)return;const headers=[...Object.keys(arr[0])];const csv=[headers.join(","),...arr.map(x=>headers.map(h=>'"'+String(x[h]??"").replace(/"/g,'""')+'"').join(","))].join("\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\\ufeff"+csv],{type:"text/csv;charset=utf-8"}));a.download="hospitality-academy-"+kind+".csv";a.click()}
+function resetDemo(){if(confirm("Reset workflow demo data?")){localStorage.removeItem("ha_core_v1_workflows");location.reload()}}
 function showTab(id){document.querySelectorAll(".coretab").forEach(x=>x.style.display="none");document.getElementById(id).style.display="block";document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.tab===id))}
-const links=[...document.querySelectorAll('#sideMenu a')];
-const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const links=[...document.querySelectorAll('#sideMenu a')],sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 function setActive(id){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id))}
 function goTo(id){const t=document.getElementById(id);if(!t)return;t.scrollIntoView({behavior:'smooth',block:'start'});setActive(id);history.replaceState(null,'','#'+id)}
 links.forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h&&h.startsWith('#')){e.preventDefault();goTo(h.slice(1))}}));
 function active(){const y=scrollY+180;let cur=sections[0];sections.forEach(s=>{if(s.offsetTop<=y)cur=s});if(cur)setActive(cur.id)}
-addEventListener('scroll',active,{passive:true});
-renderAll();active();
+addEventListener('scroll',active,{passive:true});renderAll();active();
 </script></body></html>
